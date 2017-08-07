@@ -24,5 +24,9 @@ namespace graphics_editor
         {
             InitializeComponent();
         }
+
+        void Draw_line(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

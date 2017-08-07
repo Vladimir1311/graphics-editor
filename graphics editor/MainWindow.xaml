@@ -8,7 +8,57 @@
         Title="Графический редактор" 
         Height="500" 
         Width="900">
-    <Grid>
-        
+    <Grid Name="MyGrid">
+        <Menu Background="Chocolate" VerticalAlignment="Top" >
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать">
+                </MenuItem>
+                <MenuItem Header="Открыть">
+                </MenuItem>
+                <MenuItem Header="Сохранить">
+                </MenuItem>
+                <MenuItem Header="Сохранить как">
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="О программе">
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Выход">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Canvas Background="Aqua" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Width="750" 
+                Height="450" 
+                Name="t" 
+                RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="18"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+
+        <ToolBarTray Background="Green" 
+                     HorizontalAlignment="Right" 
+                     RenderTransformOrigin="0.5,0.5" Height="447" VerticalAlignment="Top">
+            <ToolBarTray.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="18"/>
+                </TransformGroup>
+            </ToolBarTray.RenderTransform>
+            <ToolBar>
+                <Button Click="Draw_line" Content="Нарисовать линию" />
+            </ToolBar>
+        </ToolBarTray>
     </Grid>
 </Window>
