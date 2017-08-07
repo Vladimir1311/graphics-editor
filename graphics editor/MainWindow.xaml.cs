@@ -25,7 +25,27 @@ namespace graphics_editor
             InitializeComponent();
         }
 
+        /*
+         * Отрисовка линии
+         */
         void Draw_line(object sender, RoutedEventArgs e)
+        {
+            Line MyLine = new Line();
+            MyLine.X1 = 1;// BeginPoint.X;
+            MyLine.Y1 = 1;// BeginPoint.Y;
+            MyLine.X2 = 35;// EndPoint.X;
+            MyLine.Y2 = 50;// EndPoint.Y;
+            MyLine.Stroke = System.Windows.Media.Brushes.Black;
+            MyLine.StrokeThickness = 1;
+            /*MyLine.HorizontalAlignment = HorizontalAlignment.Left;
+            MyLine.VerticalAlignment = VerticalAlignment.Center;*/
+            t.Children.Add(MyLine);
+        }
+
+        /*
+         * Отрисовка прямоугольника
+         */
+        void Draw_rectangle(object sender, RoutedEventArgs e)
         {
         }
     }

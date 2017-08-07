@@ -57,7 +57,10 @@
                 </TransformGroup>
             </ToolBarTray.RenderTransform>
             <ToolBar>
-                <Button Click="Draw_line" Content="Нарисовать линию" />
+                <Button Click="Draw_line" 
+                        Content="Нарисовать линию" />
+                <Button Click="Draw_rectangle"
+                        Content="Нарисовать прямоугольник" />
             </ToolBar>
         </ToolBarTray>
     </Grid>
