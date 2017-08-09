@@ -28,7 +28,7 @@
             </MenuItem>
         </Menu>
 
-        <Canvas Background="Aqua" 
+        <Canvas Background="Silver" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Left" 
                 Width="750" 
@@ -47,7 +47,10 @@
 
         <ToolBarTray Background="Green" 
                      HorizontalAlignment="Right" 
-                     RenderTransformOrigin="0.5,0.5" Height="447" VerticalAlignment="Top">
+                     RenderTransformOrigin="0.5,0.5" 
+                     Height="447" 
+                     VerticalAlignment="Top"
+                     Orientation="Vertical">
             <ToolBarTray.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -58,9 +61,17 @@
             </ToolBarTray.RenderTransform>
             <ToolBar>
                 <Button Click="Draw_line" 
-                        Content="Нарисовать линию" />
+                        Content="Нарисовать линию">
+                </Button>
                 <Button Click="Draw_rectangle"
-                        Content="Нарисовать прямоугольник" />
+                        Content="Нарисовать прямоугольник">
+                </Button>
+                <Button Click="Draw_elipse"
+                        Content="Нарисовать круг">
+                </Button>
+                <Button Click="Draw_dont_know"
+                        Content="Нарисовать неизвестное">
+                </Button>
             </ToolBar>
         </ToolBarTray>
     </Grid>
