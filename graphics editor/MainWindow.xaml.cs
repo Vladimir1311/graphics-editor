@@ -28,22 +28,28 @@ namespace graphics_editor
         /*
          * Отрисовка линии
          */
-        void Draw_line(object sender, RoutedEventArgs e)
+        private void Draw_line(object sender, RoutedEventArgs e)
         {
             LineGeometry MyLine = new LineGeometry();
-            MyLine.StartPoint = new Point(1, 1);
-            MyLine.EndPoint = new Point(50, 40);
-            Path myPath = new Path();
-            myPath.Stroke = Brushes.Black;
-            myPath.StrokeThickness = 1;
-            myPath.Data = MyLine;
-            t.Children.Add(myPath);
+            Window_draw_line dlg = new Window_draw_line();
+            if(dlg.ShowDialog() == true)
+            {
+                MyLine.StartPoint = new Point(Convert.ToInt32(dlg.ittem_x1.Text),
+                Convert.ToInt32(dlg.ittem_y1.Text));
+                MyLine.EndPoint = new Point(Convert.ToInt32(dlg.ittem_x2.Text),
+                    Convert.ToInt32(dlg.ittem_y2.Text));
+                Path myPath = new Path();
+                myPath.Stroke = Brushes.Black;
+                myPath.StrokeThickness = 1;
+                myPath.Data = MyLine;
+                t.Children.Add(myPath);
+            }
         }
 
         /*
          * Отрисовка прямоугольника
          */
-        void Draw_rectangle(object sender, RoutedEventArgs e)
+        private void Draw_rectangle(object sender, RoutedEventArgs e)
         {
             RectangleGeometry rectangle = new RectangleGeometry();
             rectangle.Rect = new Rect(1, 50, 60, 40);
@@ -58,36 +64,47 @@ namespace graphics_editor
         /*
          * Отрисовка круга
          */
-        void Draw_elipse(object sender, RoutedEventArgs e)
+        private void Draw_elipse(object sender, RoutedEventArgs e)
         {
-            Path myPath = new Path();
-            myPath.Stroke = Brushes.Green;
-            //myPath.Fill = Brushes.MediumSlateBlue;
-            myPath.StrokeThickness = 3;
             EllipseGeometry myEllipseGeometry = new EllipseGeometry();
-            myEllipseGeometry.Center = new Point(44, 140);
-            myEllipseGeometry.RadiusX = 40;
-            myEllipseGeometry.RadiusY = 40;
-            myPath.Data = myEllipseGeometry;
-            t.Children.Add(myPath);
+            Window_Draw_circle dlg = new Window_Draw_circle();
+            if (dlg.ShowDialog() == true)
+            {
+                /*myEllipseGeometry.Center = new Point(Convert.ToInt32
+                    (dlg.x1_center.Text) + Convert.ToInt32(dlg.x1_begin.Text),
+                    Convert.ToInt32(dlg.y1_center.Text) + 
+                    Convert.ToInt32(dlg.y1_begin.Text));*/
+                myEllipseGeometry.Center = new Point(Convert.ToInt32
+                (dlg.x1_begin.Text), Convert.ToInt32(dlg.y1_begin.Text));
+                myEllipseGeometry.RadiusX = Convert.ToInt32(dlg.x1_center.Text);
+                myEllipseGeometry.RadiusY = Convert.ToInt32(dlg.y1_center.Text);
+                Path myPath = new Path();
+                myPath.Stroke = Brushes.Green;
+                myPath.StrokeThickness = 3;
+                myPath.Data = myEllipseGeometry;
+                t.Children.Add(myPath);
+            }
         }
 
+        /*
+         * Выход из программы
+         */
+        private void MenuItem_ClickExit(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
 
         /*
-         * Отрисовка неизвестного
+         * О программе
          */
-        void Draw_dont_know(object sender, RoutedEventArgs e)
+        private void MenuItem_ClickAbout(object sender, RoutedEventArgs e)
         {
-            Path myPath = new Path();
-            myPath.Stroke = Brushes.Black;
-            //myPath.Fill = Brushes.MediumSlateBlue;
-            myPath.StrokeThickness = 3;
-            EllipseGeometry myEllipseGeometry = new EllipseGeometry();
-            myEllipseGeometry.Center = new Point(44, 120);
-            myEllipseGeometry.RadiusX = 40;
-            myEllipseGeometry.RadiusY = 40;
-            myPath.Data = myEllipseGeometry;
-            t.Children.Add(myPath);
+            MenuItem menuItem = (MenuItem)sender;
+            MessageBox.Show("О программе:" + "\n" +
+                "Данный графический редактор предназначен для открытия " +
+                "рисунков, а также для рисования несложных " +
+                "геометрических фигур.";
+                );
         }
     }
 }

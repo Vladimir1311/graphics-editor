@@ -20,10 +20,14 @@
                 <MenuItem Header="Сохранить как">
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="О программе">
+                <MenuItem 
+                    Header="О программе"
+                    Click="MenuItem_ClickAbout">
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="Выход">
+                <MenuItem 
+                    Header="Выход"
+                    Click="MenuItem_ClickExit">
                 </MenuItem>
             </MenuItem>
         </Menu>
@@ -68,9 +72,6 @@
                 </Button>
                 <Button Click="Draw_elipse"
                         Content="Нарисовать круг">
-                </Button>
-                <Button Click="Draw_dont_know"
-                        Content="Нарисовать неизвестное">
                 </Button>
             </ToolBar>
         </ToolBarTray>
