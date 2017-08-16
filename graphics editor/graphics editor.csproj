@@ -102,6 +102,9 @@
     <Compile Include="Window_draw_line.xaml.cs">
       <DependentUpon>Window_draw_line.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window_Draw_rectangle.xaml.cs">
+      <DependentUpon>Window_Draw_rectangle.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window_draw_line.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Draw_rectangle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

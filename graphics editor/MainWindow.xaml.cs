@@ -52,13 +52,20 @@ namespace graphics_editor
         private void Draw_rectangle(object sender, RoutedEventArgs e)
         {
             RectangleGeometry rectangle = new RectangleGeometry();
-            rectangle.Rect = new Rect(1, 50, 60, 40);
-            Path myPath = new Path();
-            myPath.Fill = Brushes.LemonChiffon;
-            myPath.Stroke = Brushes.Red;
-            myPath.StrokeThickness = 2;
-            myPath.Data = rectangle;
-            t.Children.Add(myPath);
+            Window_Draw_rectangle dlg = new Window_Draw_rectangle();
+            if(dlg.ShowDialog() == true)
+            {
+                rectangle.Rect = new Rect(Convert.ToInt32(dlg.x_begin.Text),
+                    Convert.ToInt32(dlg.y_begin.Text), 
+                    Convert.ToInt32(dlg.width_textbox.Text), 
+                    Convert.ToInt32(dlg.height_textbox.Text));
+                Path myPath = new Path();
+                myPath.Fill = Brushes.LemonChiffon;
+                myPath.Stroke = Brushes.Red;
+                myPath.StrokeThickness = 2;
+                myPath.Data = rectangle;
+                t.Children.Add(myPath);
+            }
         }
 
         /*
@@ -70,10 +77,6 @@ namespace graphics_editor
             Window_Draw_circle dlg = new Window_Draw_circle();
             if (dlg.ShowDialog() == true)
             {
-                /*myEllipseGeometry.Center = new Point(Convert.ToInt32
-                    (dlg.x1_center.Text) + Convert.ToInt32(dlg.x1_begin.Text),
-                    Convert.ToInt32(dlg.y1_center.Text) + 
-                    Convert.ToInt32(dlg.y1_begin.Text));*/
                 myEllipseGeometry.Center = new Point(Convert.ToInt32
                 (dlg.x1_begin.Text), Convert.ToInt32(dlg.y1_begin.Text));
                 myEllipseGeometry.RadiusX = Convert.ToInt32(dlg.x1_center.Text);
@@ -103,8 +106,7 @@ namespace graphics_editor
             MessageBox.Show("О программе:" + "\n" +
                 "Данный графический редактор предназначен для открытия " +
                 "рисунков, а также для рисования несложных " +
-                "геометрических фигур.";
-                );
+                "геометрических фигур.");
         }
     }
 }

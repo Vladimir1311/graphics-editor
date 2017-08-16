@@ -32,3 +32,5 @@ C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\bin\Debug\sv\Xceed
 C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\obj\Debug\Window_Draw_circle.g.cs
 C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\obj\Debug\Window_Draw_circle.baml
+C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\obj\Debug\Window_Draw_rectangle.g.cs
+C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\obj\Debug\Window_Draw_rectangle.baml

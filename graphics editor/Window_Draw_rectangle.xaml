@@ -1,0 +1,132 @@
+﻿<Window x:Class="graphics_editor.Window_Draw_rectangle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:graphics_editor"
+        mc:Ignorable="d"
+        Title="Нарисовать прямоугольник" 
+        Height="170" 
+        MaxHeight="180"
+        MaxWidth="310"
+        MinHeight="170"
+        MinWidth="300"
+        Width="300">
+    <Grid>
+        <Label 
+            Content="Координаты: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="10,10,0,0" 
+            VerticalAlignment="Top" 
+            Width="90">
+        </Label>
+
+        <Label 
+            Content="X: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="10,35,0,0" 
+            VerticalAlignment="Top" 
+            Width="25">
+        </Label>
+
+        <TextBox 
+            HorizontalAlignment="Left"
+            PreviewTextInput="TextBox_PreviewTextInput_x_begin" 
+            PreviewKeyDown="TextBox_PreviewKeyDown_x_begin" 
+            Height="20" 
+            Name="x_begin"
+            Margin="35,40,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="80">
+        </TextBox>
+
+        <Label 
+            Content="Y: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="10,60,0,0" 
+            VerticalAlignment="Top" 
+            Width="25">
+        </Label>
+
+        <TextBox 
+            HorizontalAlignment="Left" 
+            PreviewTextInput="TextBox_PreviewTextInput_y_begin" 
+            PreviewKeyDown="TextBox_PreviewKeyDown_y_begin" 
+            Height="20" 
+            x:Name="y_begin"
+            Margin="35,65,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="80">
+        </TextBox>
+
+        <Label 
+            Content="Размеры:" 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="133,10,0,0" 
+            VerticalAlignment="Top" 
+            Width="90">
+        </Label>
+
+        <Label 
+            Content="Ширина: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="133,35,0,0" 
+            VerticalAlignment="Top" 
+            Width="65">
+        </Label>
+
+        <TextBox 
+            HorizontalAlignment="Left" 
+            PreviewTextInput="TextBox_PreviewTextInput_width_textbox" 
+            PreviewKeyDown="TextBox_PreviewKeyDown_width_textbox" 
+            Height="20" 
+            x:Name="width_textbox"
+            Margin="202,40,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="80">
+        </TextBox>
+
+        <Label 
+            Content="Высота: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="133,60,0,0" 
+            VerticalAlignment="Top" 
+            Width="55">
+        </Label>
+
+        <TextBox 
+            HorizontalAlignment="Left" 
+            PreviewTextInput="TextBox_PreviewTextInput_height_textbox" 
+            PreviewKeyDown="TextBox_PreviewKeyDown_height_textbox" 
+            Height="20" 
+            x:Name="height_textbox"
+            Margin="202,65,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="80">
+        </TextBox>
+
+        <Button Name="okButton" 
+                Click="okButton_Click" 
+                IsDefault="True" 
+                Margin="47,99,185,10"
+                Content="OK">
+        </Button>
+
+        <Button x:Name="cancelButton" 
+                IsCancel="True" 
+                Content="Cancel" 
+                Margin="150,99,65,10"
+                Click="Cancel_click">
+        </Button>
+    </Grid>
+</Window>
