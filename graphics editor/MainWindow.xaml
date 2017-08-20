@@ -9,22 +9,36 @@
         Height="500" 
         Width="900">
     <Grid Name="MyGrid">
-        <Menu Background="Chocolate" VerticalAlignment="Top" >
-            <MenuItem Header="Файл">
-                <MenuItem Header="Создать">
+        <Menu 
+            Background="Chocolate" 
+            VerticalAlignment="Top" >
+            <MenuItem 
+                Header="Файл">
+                <MenuItem 
+                    Header="Создать">
                 </MenuItem>
-                <MenuItem Header="Открыть">
+                
+                <MenuItem 
+                    Header="Открыть">
                 </MenuItem>
-                <MenuItem Header="Сохранить">
+                
+                <MenuItem 
+                    Header="Сохранить">
                 </MenuItem>
-                <MenuItem Header="Сохранить как">
+                
+                <MenuItem 
+                    Header="Сохранить как">
                 </MenuItem>
+                
                 <Separator/>
+                
                 <MenuItem 
                     Header="О программе"
                     Click="MenuItem_ClickAbout">
                 </MenuItem>
+                
                 <Separator/>
+                
                 <MenuItem 
                     Header="Выход"
                     Click="MenuItem_ClickExit">
@@ -32,12 +46,14 @@
             </MenuItem>
         </Menu>
 
+        
         <Canvas Background="Silver" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Left" 
+                MouseLeftButtonDown="Canvas_Click"
                 Width="750" 
                 Height="450" 
-                Name="t" 
+                Name="canvas" 
                 RenderTransformOrigin="0.5,0.5">
             <Canvas.RenderTransform>
                 <TransformGroup>
@@ -64,14 +80,31 @@
                 </TransformGroup>
             </ToolBarTray.RenderTransform>
             <ToolBar>
-                <Button Click="Draw_line" 
-                        Content="Нарисовать линию">
+                <Button
+                    Click="Draw_line" 
+                    Content="Нарисовать линию">
                 </Button>
-                <Button Click="Draw_rectangle"
-                        Content="Нарисовать прямоугольник">
+                
+                <Button 
+                    Click="Draw_rectangle"
+                    Content="Нарисовать прямоугольник">
                 </Button>
-                <Button Click="Draw_elipse"
-                        Content="Нарисовать круг">
+
+                <Button 
+                    Click="Draw_elipse"
+                    Content="Нарисовать круг">
+                </Button>
+
+                <CheckBox 
+                    x:Name="checkBox_erase" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="20" 
+                    Content="Ластик" >
+                </CheckBox>
+
+                <Button Click="Clear_canvas"
+                        Content="Очистить">
                 </Button>
             </ToolBar>
         </ToolBarTray>

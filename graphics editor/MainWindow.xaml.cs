@@ -32,7 +32,7 @@ namespace graphics_editor
         {
             LineGeometry MyLine = new LineGeometry();
             Window_draw_line dlg = new Window_draw_line();
-            if(dlg.ShowDialog() == true)
+            if (dlg.ShowDialog() == true)
             {
                 MyLine.StartPoint = new Point(Convert.ToInt32(dlg.ittem_x1.Text),
                 Convert.ToInt32(dlg.ittem_y1.Text));
@@ -42,7 +42,7 @@ namespace graphics_editor
                 myPath.Stroke = Brushes.Black;
                 myPath.StrokeThickness = 1;
                 myPath.Data = MyLine;
-                t.Children.Add(myPath);
+                canvas.Children.Add(myPath);
             }
         }
 
@@ -53,18 +53,18 @@ namespace graphics_editor
         {
             RectangleGeometry rectangle = new RectangleGeometry();
             Window_Draw_rectangle dlg = new Window_Draw_rectangle();
-            if(dlg.ShowDialog() == true)
+            if (dlg.ShowDialog() == true)
             {
                 rectangle.Rect = new Rect(Convert.ToInt32(dlg.x_begin.Text),
-                    Convert.ToInt32(dlg.y_begin.Text), 
-                    Convert.ToInt32(dlg.width_textbox.Text), 
+                    Convert.ToInt32(dlg.y_begin.Text),
+                    Convert.ToInt32(dlg.width_textbox.Text),
                     Convert.ToInt32(dlg.height_textbox.Text));
                 Path myPath = new Path();
                 myPath.Fill = Brushes.LemonChiffon;
                 myPath.Stroke = Brushes.Red;
                 myPath.StrokeThickness = 2;
                 myPath.Data = rectangle;
-                t.Children.Add(myPath);
+                canvas.Children.Add(myPath);
             }
         }
 
@@ -85,7 +85,7 @@ namespace graphics_editor
                 myPath.Stroke = Brushes.Green;
                 myPath.StrokeThickness = 3;
                 myPath.Data = myEllipseGeometry;
-                t.Children.Add(myPath);
+                canvas.Children.Add(myPath);
             }
         }
 
@@ -107,6 +107,33 @@ namespace graphics_editor
                 "Данный графический редактор предназначен для открытия " +
                 "рисунков, а также для рисования несложных " +
                 "геометрических фигур.");
+        }
+
+        /*
+         * Очистить canvas
+         */
+        private void Clear_canvas(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+        }
+
+        /*
+         * Ластик через нажатие кнопки мыши
+         */
+        private void Canvas_Click(object sender, MouseButtonEventArgs e)
+        {
+            if(checkBox_erase.IsChecked == true)
+            {
+                EllipseGeometry myEllipseGeometry = new EllipseGeometry();
+                myEllipseGeometry.RadiusX = 20;
+                myEllipseGeometry.RadiusY = 20;
+                Path myPath = new Path();
+                Point p = e.GetPosition(this);
+                myEllipseGeometry.Center = new Point(p.X, p.Y);
+                myPath.Fill = this.canvas.Background;
+                myPath.Data = myEllipseGeometry;
+                canvas.Children.Add(myPath);
+            }
         }
     }
 }

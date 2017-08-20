@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\obj\Debug\
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\
 graphics_editor
 none
 false
 DEBUG;TRACE
-C:\Users\gd\Desktop\.NET (C#)\graphics editor\graphics editor\App.xaml
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\App.xaml
 41569879590
 
 8-1238287200
-43664792528
+431312579943
 MainWindow.xaml;Window_Draw_circle.xaml;Window_draw_line.xaml;Window_Draw_rectangle.xaml;
 
 False
