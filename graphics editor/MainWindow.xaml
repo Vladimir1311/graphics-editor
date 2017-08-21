@@ -15,30 +15,36 @@
             <MenuItem 
                 Header="Файл">
                 <MenuItem 
-                    Header="Создать">
+                    Header="Создать"
+                    Click="MenuItem_ClickNew">
                 </MenuItem>
                 
                 <MenuItem 
-                    Header="Открыть">
+                    Header="Открыть"
+                    Click="MenuItem_ClickOpen">
                 </MenuItem>
                 
                 <MenuItem 
-                    Header="Сохранить">
+                    Header="Сохранить"
+                    Click="MenuItem_ClickSave">
                 </MenuItem>
                 
                 <MenuItem 
-                    Header="Сохранить как">
+                    Header="Сохранить как"
+                    Click="MenuItem_ClickSavaAs">
                 </MenuItem>
-                
-                <Separator/>
-                
+
+                <Separator>
+                </Separator>
+
                 <MenuItem 
                     Header="О программе"
                     Click="MenuItem_ClickAbout">
                 </MenuItem>
-                
-                <Separator/>
-                
+
+                <Separator>
+                </Separator>
+
                 <MenuItem 
                     Header="Выход"
                     Click="MenuItem_ClickExit">
@@ -47,20 +53,24 @@
         </Menu>
 
         
-        <Canvas Background="Silver" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Left" 
-                MouseLeftButtonDown="Canvas_Click"
-                Width="750" 
-                Height="450" 
-                Name="canvas" 
-                RenderTransformOrigin="0.5,0.5">
+        <Canvas 
+            Background="Gray" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            MouseLeftButtonDown="Canvas_Click"
+            Width="728" 
+            Height="450" 
+            Name="canvas" >
+            <!--Canvas.Background>
+                <ImageBrush>
+                </ImageBrush>
+            </!-->
             <Canvas.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform Y="18"/>
+                    <TranslateTransform Y="19"/>
                 </TransformGroup>
             </Canvas.RenderTransform>
         </Canvas>
@@ -68,7 +78,7 @@
         <ToolBarTray Background="Green" 
                      HorizontalAlignment="Right" 
                      RenderTransformOrigin="0.5,0.5" 
-                     Height="447" 
+                     Height="450" 
                      VerticalAlignment="Top"
                      Orientation="Vertical">
             <ToolBarTray.RenderTransform>
@@ -102,6 +112,13 @@
                     Height="20" 
                     Content="Ластик" >
                 </CheckBox>
+
+                <Slider
+                    Maximum="60"
+                    Minimum="1"
+                    Name="Slider_erase"
+                    Value="20">
+                </Slider>
 
                 <Button Click="Clear_canvas"
                         Content="Очистить">

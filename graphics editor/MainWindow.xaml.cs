@@ -125,8 +125,8 @@ namespace graphics_editor
             if(checkBox_erase.IsChecked == true)
             {
                 EllipseGeometry myEllipseGeometry = new EllipseGeometry();
-                myEllipseGeometry.RadiusX = 20;
-                myEllipseGeometry.RadiusY = 20;
+                myEllipseGeometry.RadiusX = Slider_erase.Value;
+                myEllipseGeometry.RadiusY = Slider_erase.Value;
                 Path myPath = new Path();
                 Point p = e.GetPosition(this);
                 myEllipseGeometry.Center = new Point(p.X, p.Y);
@@ -134,6 +134,71 @@ namespace graphics_editor
                 myPath.Data = myEllipseGeometry;
                 canvas.Children.Add(myPath);
             }
+        }
+
+        /*
+         * Создать
+         */
+        private void MenuItem_ClickNew(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Здесь будет реализовано создание нового файла");
+        }
+
+        /*
+         * Открыть
+         */
+        private void MenuItem_ClickOpen(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Здесь буде реализовано открытие файла!!");
+            System.Windows.Forms.OpenFileDialog open_dialog = new
+                System.Windows.Forms.OpenFileDialog();
+            open_dialog.Filter = "bmp рисунок (*.bmp)|*.bmp|" +
+                "Jpg рисунок (*.jpg, *.jpeg)|*.jpg; *.jpeg|" + 
+                "Png рисунок (*.png)|*.png";
+            MessageBox.Show("Здесь будет реализовано открытие файла");
+            if (open_dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string file_name = open_dialog.FileName;
+                string path = System.IO.Path.GetFullPath(file_name);
+                MessageBox.Show("Имя файла: "+ file_name +
+                    "\nПуть файла: "+path);
+                //ImageBrush img = new ImageBrush(path);
+                /*BitmapImage myBitmapImage1 = new BitmapImage();
+                myBitmapImage1.BeginInit();
+                myBitmapImage1.UriSource = new Uri(path, UriKind.Absolute);
+                myBitmapImage1.EndInit();
+                Image1.Source = myBitmapImage1;*/
+            }
+        }
+
+        /*
+         * Сохранить
+         */
+        private void MenuItem_ClickSave(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Здесь будет реализовано сохрание файла");
+            // Base Image
+            string path_save = @"C:\Users\gd\Desktop\new.jpg";
+            RenderTargetBitmap bmpSource = new RenderTargetBitmap
+                ((int)canvas.ActualWidth, (int)canvas.ActualHeight, 
+                96, 96, PixelFormats.Pbgra32);
+            bmpSource.Render(canvas);
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.QualityLevel = 75;
+            encoder.Frames.Add(BitmapFrame.Create(bmpSource));
+            using (System.IO.FileStream stream = System.IO.File.Create(path_save))
+            {
+                encoder.Save(stream);
+            }
+        }
+
+        /*
+         * Сохранить как
+         */
+        private void MenuItem_ClickSavaAs(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Здесь будет реализовано сохрание файла" +
+                " по пути, выбранным пользователем");
         }
     }
 }
