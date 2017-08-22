@@ -142,6 +142,11 @@ namespace graphics_editor
         private void MenuItem_ClickNew(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Здесь будет реализовано создание нового файла");
+            using (System.IO.FileStream fs = System.IO.File.Create(
+                @"C:\Users\gd\Desktop\JPG\new.jpg"))
+            {
+                canvas.Children.Clear();
+            }
         }
 
         /*
@@ -176,19 +181,18 @@ namespace graphics_editor
          */
         private void MenuItem_ClickSave(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Здесь будет реализовано сохрание файла");
-            // Base Image
             string path_save = @"C:\Users\gd\Desktop\new.jpg";
             RenderTargetBitmap bmpSource = new RenderTargetBitmap
                 ((int)canvas.ActualWidth, (int)canvas.ActualHeight, 
                 96, 96, PixelFormats.Pbgra32);
             bmpSource.Render(canvas);
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.QualityLevel = 75;
+            encoder.QualityLevel = 100;
             encoder.Frames.Add(BitmapFrame.Create(bmpSource));
-            using (System.IO.FileStream stream = System.IO.File.Create(path_save))
+            using (System.IO.Stream stream = System.IO.File.Create(path_save))
             {
                 encoder.Save(stream);
+                MessageBox.Show("Файл успешно сохранен");
             }
         }
 
@@ -197,8 +201,34 @@ namespace graphics_editor
          */
         private void MenuItem_ClickSavaAs(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Здесь будет реализовано сохрание файла" +
-                " по пути, выбранным пользователем");
+            RenderTargetBitmap bmpSource = new RenderTargetBitmap
+                ((int)canvas.ActualWidth, (int)canvas.ActualHeight,
+                96, 96, PixelFormats.Pbgra32);
+            bmpSource.Render(canvas);
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.QualityLevel = 100;
+            encoder.Frames.Add(BitmapFrame.Create(bmpSource));
+            /*System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1
+                    = new System.Windows.Forms.FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() ==
+                System.Windows.Forms.DialogResult.OK)*/
+            System.Windows.Forms.SaveFileDialog saveFileDialog1 
+                = new System.Windows.Forms.SaveFileDialog();
+            saveFileDialog1.Filter = "bmp рисунок (*.bmp)|*.bmp|" +
+                "Jpg рисунок (*.jpg, *.jpeg)|*.jpg; *.jpeg|" +
+                "Png рисунок (*.png)|*.png";
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string path_save = saveFileDialog1.FileName;
+                //string path_save = folderBrowserDialog1.SelectedPath;
+                using (System.IO.Stream stream = System.IO.File.Create(
+                    path_save))
+                {
+                    encoder.Save(stream);
+                    MessageBox.Show("Файл успешно сохранен");
+                }
+            }
         }
     }
 }

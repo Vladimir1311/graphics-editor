@@ -10,6 +10,7 @@
         Width="900">
     <Grid Name="MyGrid">
         <Menu 
+            Name="Menu_graphics_editor"
             Background="Chocolate" 
             VerticalAlignment="Top" >
             <MenuItem 
@@ -58,7 +59,7 @@
             VerticalAlignment="Top" 
             HorizontalAlignment="Left" 
             MouseLeftButtonDown="Canvas_Click"
-            Width="728" 
+            Width="726" 
             Height="450" 
             Name="canvas" >
             <!--Canvas.Background>
