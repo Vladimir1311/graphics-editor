@@ -25,6 +25,7 @@ namespace graphics_editor
             InitializeComponent();
         }
 
+
         /*
          * Отрисовка линии
          */
@@ -34,17 +35,62 @@ namespace graphics_editor
             Window_draw_line dlg = new Window_draw_line();
             if (dlg.ShowDialog() == true)
             {
-                MyLine.StartPoint = new Point(Convert.ToInt32(dlg.ittem_x1.Text),
-                Convert.ToInt32(dlg.ittem_y1.Text));
-                MyLine.EndPoint = new Point(Convert.ToInt32(dlg.ittem_x2.Text),
-                    Convert.ToInt32(dlg.ittem_y2.Text));
                 Path myPath = new Path();
-                myPath.Stroke = Brushes.Black;
-                myPath.StrokeThickness = 1;
+
+                //цвет линии
+                if (checkBox_stroke_green_color.IsChecked == true)
+                {
+                    checkBox_fill_red_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Green;
+                }
+                else if (checkBox_stroke_red_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Red;
+                }
+                else if (checkBox_stroke_black_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_red_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Black;
+                }
+
+                //толщина линии
+                if(checkBox_StrokeThickness_0.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 0;
+                }
+                else if (checkBox_StrokeThickness_1.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 1;
+                }
+                else if (checkBox_StrokeThickness_2.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 2;
+                }
+                else if (checkBox_StrokeThickness_3.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 3;
+                }
+                else if (checkBox_StrokeThickness_4.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 4;
+                }
+                else if (checkBox_StrokeThickness_5.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 5;
+                }
+                MyLine.StartPoint = new Point(Convert.ToInt32(dlg.ittem_x1.Text), 
+                    Convert.ToInt32(dlg.ittem_y1.Text));
+                MyLine.EndPoint = new Point(Convert.ToInt32(dlg.ittem_x2.Text), 
+                    Convert.ToInt32(dlg.ittem_y2.Text));
                 myPath.Data = MyLine;
                 canvas.Children.Add(myPath);
             }
         }
+
 
         /*
          * Отрисовка прямоугольника
@@ -60,6 +106,8 @@ namespace graphics_editor
                     Convert.ToInt32(dlg.width_textbox.Text),
                     Convert.ToInt32(dlg.height_textbox.Text));
                 Path myPath = new Path();
+
+                //цвет заливки
                 if(checkBox_fill_green_color.IsChecked == true)
                 {
                     checkBox_fill_red_color.IsChecked = false;
@@ -78,12 +126,57 @@ namespace graphics_editor
                     checkBox_fill_red_color.IsChecked = false;
                     myPath.Fill = Brushes.Black;
                 }
-                myPath.Stroke = Brushes.Red;
-                myPath.StrokeThickness = 0;
+
+                //цвет линии
+                if (checkBox_stroke_green_color.IsChecked == true)
+                {
+                    checkBox_fill_red_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Green;
+                }
+                else if (checkBox_stroke_red_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Red;
+                }
+                else if (checkBox_stroke_black_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_red_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Black;
+                }
+
+                //толщина линии
+                if (checkBox_StrokeThickness_0.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 0;
+                }
+                else if (checkBox_StrokeThickness_1.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 1;
+                }
+                else if (checkBox_StrokeThickness_2.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 2;
+                }
+                else if (checkBox_StrokeThickness_3.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 3;
+                }
+                else if (checkBox_StrokeThickness_4.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 4;
+                }
+                else if (checkBox_StrokeThickness_5.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 5;
+                }
                 myPath.Data = rectangle;
                 canvas.Children.Add(myPath);
             }
         }
+
 
         /*
          * Отрисовка круга
@@ -99,8 +192,8 @@ namespace graphics_editor
                 myEllipseGeometry.RadiusX = Convert.ToInt32(dlg.x1_center.Text);
                 myEllipseGeometry.RadiusY = Convert.ToInt32(dlg.y1_center.Text);
                 Path myPath = new Path();
-                myPath.Stroke = Brushes.Black;
-                myPath.StrokeThickness = 0;
+
+                //цвет заливки
                 if(checkBox_fill_green_color.IsChecked == true)
                 {
                     checkBox_fill_red_color.IsChecked = false;
@@ -119,10 +212,57 @@ namespace graphics_editor
                     checkBox_fill_red_color.IsChecked = false;
                     myPath.Fill = Brushes.Black;
                 }
+
+                //цвет линии
+                if (checkBox_stroke_green_color.IsChecked == true)
+                {
+                    checkBox_fill_red_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Green;
+                }
+                else if (checkBox_stroke_red_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Red;
+                }
+                else if (checkBox_stroke_black_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_red_color.IsChecked = false;
+                    myPath.Stroke = Brushes.Black;
+                }
+
+                //толщина линии
+                if (checkBox_StrokeThickness_0.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 0;
+                }
+                else if (checkBox_StrokeThickness_1.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 1;
+                }
+                else if (checkBox_StrokeThickness_2.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 2;
+                }
+                else if (checkBox_StrokeThickness_3.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 3;
+                }
+                else if (checkBox_StrokeThickness_4.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 4;
+                }
+                else if (checkBox_StrokeThickness_5.IsChecked == true)
+                {
+                    myPath.StrokeThickness = 5;
+                }
                 myPath.Data = myEllipseGeometry;
                 canvas.Children.Add(myPath);
             }
         }
+
 
         /*
          * Выход из программы
@@ -144,6 +284,7 @@ namespace graphics_editor
                 "геометрических фигур.");
         }
 
+
         /*
          * Очистить canvas
          */
@@ -151,6 +292,7 @@ namespace graphics_editor
         {
             canvas.Children.Clear();
         }
+
 
         /*
          * Canvas
@@ -174,6 +316,7 @@ namespace graphics_editor
             }
         }
 
+
         /*
          * Создать
          */
@@ -186,6 +329,7 @@ namespace graphics_editor
                 canvas.Children.Clear();
             }
         }
+
 
         /*
          * Открыть
@@ -214,6 +358,7 @@ namespace graphics_editor
             }
         }
 
+
         /*
          * Сохранить
          */
@@ -230,9 +375,10 @@ namespace graphics_editor
             using (System.IO.Stream stream = System.IO.File.Create(path_save))
             {
                 encoder.Save(stream);
-                MessageBox.Show("Файл успешно сохранен");
+                MessageBox.Show("Файл успешно сохранен!");
             }
         }
+
 
         /*
          * Сохранить как
@@ -259,7 +405,7 @@ namespace graphics_editor
                     path_save))
                 {
                     encoder.Save(stream);
-                    MessageBox.Show("Файл успешно сохранен");
+                    MessageBox.Show("Файл успешно сохранен!");
                 }
             }
         }

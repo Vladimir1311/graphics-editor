@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:graphics_editor"
     mc:Ignorable="d"
     Title="Графический редактор" 
-    Height="570" 
+    Height="582" 
     Width="906">
     <Grid Name="MyGrid">
         <Menu 
@@ -57,15 +57,15 @@
 
         <ToolBarTray 
             HorizontalAlignment="Left" 
-            Height="48" 
+            Height="60" 
             Margin="0,19,0,0" 
             VerticalAlignment="Top" 
             Width="898">
-            <ToolBar Margin="0,0,-898,-46">
+            <ToolBar Margin="0,0,-898,-60">
                 <Label
                     Content="Цвета заливки: " 
                     Height="25" 
-                    Margin="0,0,0,11" >
+                    Margin="0,0,0,25" >
                 </Label>
                 
                 <CheckBox 
@@ -74,7 +74,7 @@
                     IsChecked="False" 
                     Height="25" 
                     Content="Красный" 
-                    Margin="0,0,0,11" >
+                    Margin="0,0,0,25" >
                 </CheckBox>
                 
                 <CheckBox 
@@ -83,7 +83,7 @@
                     IsChecked="False" 
                     Height="25" 
                     Content="Зеленый"
-                    Margin="0,0,0,11" >
+                    Margin="0,0,0,25" >
                 </CheckBox>
 
                 <CheckBox 
@@ -92,12 +92,109 @@
                     IsChecked="False" 
                     Height="25" 
                     Content="Черный"
-                    Margin="0,0,0,11" >
+                    Margin="0,0,0,25" >
                 </CheckBox>
 
                 <Separator
                     Width="2">
                 </Separator>
+
+                <Label 
+                    Content="Цвет линии: "
+                    Height="25"
+                    Margin="0,0,0,25">
+                </Label>
+
+                <CheckBox 
+                    x:Name="checkBox_stroke_red_color" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="Красный" 
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_stroke_green_color" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="Зеленый"
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_stroke_black_color" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="Черный"
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <Separator
+                    Width="2">
+                </Separator>
+
+                <Label
+                    Content="Толщина линии: " 
+                    Height="25" 
+                    Margin="0,0,0,25" >
+                </Label>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_0" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="0" 
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_1" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="1"
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_2" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="2"
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_3" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="3" 
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_4" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="4"
+                    Margin="0,0,0,25" >
+                </CheckBox>
+
+                <CheckBox 
+                    x:Name="checkBox_StrokeThickness_5" 
+                    IsThreeState="True" 
+                    IsChecked="False" 
+                    Height="25" 
+                    Content="5"
+                    Margin="0,0,0,25" >
+                </CheckBox>
             </ToolBar>
         </ToolBarTray>
 
@@ -110,7 +207,7 @@
             Width="725" 
             Height="460" 
             Name="canvas" 
-            Margin="0,51,0,0" >
+            Margin="0,63,0,0" >
             <!--Canvas.Background>
                 <ImageBrush>
                 </ImageBrush>
@@ -133,7 +230,7 @@
             Name="ToolBarTray_for_buttons_and_checkbox"
             VerticalAlignment="Top"
             Orientation="Vertical" 
-            Margin="0,51,0,0">
+            Margin="0,63,0,0">
             <ToolBarTray.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
