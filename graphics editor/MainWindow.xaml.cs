@@ -60,9 +60,26 @@ namespace graphics_editor
                     Convert.ToInt32(dlg.width_textbox.Text),
                     Convert.ToInt32(dlg.height_textbox.Text));
                 Path myPath = new Path();
-                myPath.Fill = Brushes.LemonChiffon;
+                if(checkBox_fill_green_color.IsChecked == true)
+                {
+                    checkBox_fill_red_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Fill = Brushes.Green;
+                }
+                else if(checkBox_fill_red_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Fill = Brushes.Red;
+                }
+                else if(checkBox_fill_black_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_red_color.IsChecked = false;
+                    myPath.Fill = Brushes.Black;
+                }
                 myPath.Stroke = Brushes.Red;
-                myPath.StrokeThickness = 2;
+                myPath.StrokeThickness = 0;
                 myPath.Data = rectangle;
                 canvas.Children.Add(myPath);
             }
@@ -82,8 +99,26 @@ namespace graphics_editor
                 myEllipseGeometry.RadiusX = Convert.ToInt32(dlg.x1_center.Text);
                 myEllipseGeometry.RadiusY = Convert.ToInt32(dlg.y1_center.Text);
                 Path myPath = new Path();
-                myPath.Stroke = Brushes.Green;
-                myPath.StrokeThickness = 3;
+                myPath.Stroke = Brushes.Black;
+                myPath.StrokeThickness = 0;
+                if(checkBox_fill_green_color.IsChecked == true)
+                {
+                    checkBox_fill_red_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Fill = Brushes.Green;
+                }
+                else if (checkBox_fill_red_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_black_color.IsChecked = false;
+                    myPath.Fill = Brushes.Red;
+                }
+                else if (checkBox_fill_black_color.IsChecked == true)
+                {
+                    checkBox_fill_green_color.IsChecked = false;
+                    checkBox_fill_red_color.IsChecked = false;
+                    myPath.Fill = Brushes.Black;
+                }
                 myPath.Data = myEllipseGeometry;
                 canvas.Children.Add(myPath);
             }
@@ -118,11 +153,14 @@ namespace graphics_editor
         }
 
         /*
-         * Ластик через нажатие кнопки мыши
+         * Canvas
          */
         private void Canvas_Click(object sender, MouseButtonEventArgs e)
         {
-            if(checkBox_erase.IsChecked == true)
+            /*
+             * Ластик через нажатие кнопки мыши
+             */
+            if (checkBox_erase.IsChecked == true)
             {
                 EllipseGeometry myEllipseGeometry = new EllipseGeometry();
                 myEllipseGeometry.RadiusX = Slider_erase.Value;
@@ -208,10 +246,6 @@ namespace graphics_editor
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             encoder.QualityLevel = 100;
             encoder.Frames.Add(BitmapFrame.Create(bmpSource));
-            /*System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1
-                    = new System.Windows.Forms.FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() ==
-                System.Windows.Forms.DialogResult.OK)*/
             System.Windows.Forms.SaveFileDialog saveFileDialog1 
                 = new System.Windows.Forms.SaveFileDialog();
             saveFileDialog1.Filter = "bmp рисунок (*.bmp)|*.bmp|" +
@@ -221,7 +255,6 @@ namespace graphics_editor
             if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string path_save = saveFileDialog1.FileName;
-                //string path_save = folderBrowserDialog1.SelectedPath;
                 using (System.IO.Stream stream = System.IO.File.Create(
                     path_save))
                 {

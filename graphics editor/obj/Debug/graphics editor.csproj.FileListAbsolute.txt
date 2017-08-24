@@ -53,7 +53,6 @@ C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\bin\Debug\ro\Xceed
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.csprojResolveAssemblyReference.cache
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\MainWindow.g.cs
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Window_Draw_circle.g.cs
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Window_draw_line.g.cs
@@ -70,3 +69,4 @@ C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.csproj.GenerateResource.Cache
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.exe
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.pdb
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.csprojResolveAssemblyReference.cache
