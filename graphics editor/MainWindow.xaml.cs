@@ -23,6 +23,22 @@ namespace graphics_editor
         public MainWindow()
         {
             InitializeComponent();
+
+            var st = new ScaleTransform();
+            canvas.RenderTransform = st;
+            canvas.MouseWheel += (sender, e) =>
+            {
+                if (e.Delta > 0)
+                {
+                    st.ScaleX *= 1.05;
+                    st.ScaleY *= 1.05;
+                }
+                else
+                {
+                    st.ScaleX /= 1.05;
+                    st.ScaleY /= 1.05;
+                }
+            };
         }
 
 

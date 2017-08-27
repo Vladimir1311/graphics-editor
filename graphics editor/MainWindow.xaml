@@ -207,7 +207,7 @@
             Width="725" 
             Height="460" 
             Name="canvas" 
-            Margin="0,63,0,0" >
+            Margin="0,81,0,0" >
             <!--Canvas.Background>
                 <ImageBrush>
                 </ImageBrush>
@@ -267,7 +267,7 @@
                 </CheckBox>
 
                 <Slider
-                    Maximum="60"
+                    Maximum="40"
                     Minimum="1"
                     Name="Slider_erase"
                     Value="20">
