@@ -70,3 +70,9 @@ C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.exe
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.pdb
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\graphics editor.csprojResolveAssemblyReference.cache
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Cololrs.g.cs
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Cololrs.baml
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Stroke_Thickness.g.cs
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Stroke_Thickness.baml
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Color_Fill.g.cs
+C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\obj\Debug\Color_Fill.baml

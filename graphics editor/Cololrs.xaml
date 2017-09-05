@@ -1,0 +1,114 @@
+﻿<Window 
+    x:Class="graphics_editor.Cololrs" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:graphics_editor" 
+    mc:Ignorable="d" 
+    Title="Цвет линии" 
+    Height="300" 
+    Width="300">
+    <Grid>
+        <Label 
+            Content="Выберите цвет линии: " 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="20,15,0,0" 
+            VerticalAlignment="Top" 
+            Width="150">
+        </Label>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Красный" 
+            HorizontalAlignment="Left"
+            Margin="20,40,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Зеленый" 
+            HorizontalAlignment="Left"
+            Margin="20,60,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Черный" 
+            HorizontalAlignment="Left"
+            Margin="20,80,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Синий" 
+            HorizontalAlignment="Left"
+            Margin="20,100,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Коричневый" 
+            HorizontalAlignment="Left"
+            Margin="20,120,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Оранжевый" 
+            HorizontalAlignment="Left"
+            Margin="20,140,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Белый" 
+            HorizontalAlignment="Left"
+            Margin="20,160,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <RadioButton 
+            GroupName="Stroke_Color" 
+            Checked="RadioButton_Checked" 
+            Content="Желтый" 
+            HorizontalAlignment="Left"
+            Margin="20,180,0,0" 
+            VerticalAlignment="Top">
+        </RadioButton>
+
+        <Button 
+            Content="ОК" 
+            Click="okButton_Click" 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="20,216,0,0" 
+            VerticalAlignment="Top"
+            Width="80">
+        </Button>
+
+        <Button 
+            Content="Отмена" 
+            Click="Cancel_click" 
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="157,216,0,0"
+            VerticalAlignment="Top" 
+            Width="100">
+        </Button>
+    </Grid>
+</Window>

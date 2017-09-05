@@ -280,6 +280,23 @@
                     Click="Clear_canvas"
                     Content="Очистить">
                 </Button>
+
+                <Separator>
+                </Separator>
+                
+                <Label
+                    Content="Масштаб">
+                </Label>
+
+                <Button
+                    Content="Увеличить"
+                    Click="Zoom_Enlargement">
+                </Button>
+
+                <Button
+                    Content="Уменьшить"
+                    Click="Zoom_Decrease">
+                </Button>
             </ToolBar>
         </ToolBarTray>
     </Grid>

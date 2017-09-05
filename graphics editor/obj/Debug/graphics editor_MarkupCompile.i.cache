@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\gd\Desktop\.NET (C#)\graphics-editor\graphics editor\App.xaml
-41569879590
+7-201416594
 
-14631091734
+151020334834
 431312579943
-MainWindow.xaml;Window_Draw_circle.xaml;Window_draw_line.xaml;Window_Draw_rectangle.xaml;
+Cololrs.xaml;Color_Fill.xaml;MainWindow.xaml;Stroke_Thickness.xaml;Window_Draw_circle.xaml;Window_draw_line.xaml;Window_Draw_rectangle.xaml;
 
 False
 
