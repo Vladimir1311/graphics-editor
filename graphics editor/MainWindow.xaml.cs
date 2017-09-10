@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.InteropServices;
 
 namespace graphics_editor
 {
@@ -23,7 +24,7 @@ namespace graphics_editor
         public MainWindow()
         {
             InitializeComponent();
-
+   
             //Zoom
             var st = new ScaleTransform();
             canvas.RenderTransform = st;
@@ -309,26 +310,44 @@ namespace graphics_editor
          */
         private void MenuItem_ClickOpen(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Здесь буде реализовано открытие файла!!");
+            System.IO.MemoryStream memoStream = new System.IO.MemoryStream();
             System.Windows.Forms.OpenFileDialog open_dialog = new
-                System.Windows.Forms.OpenFileDialog();
+                    System.Windows.Forms.OpenFileDialog();
             open_dialog.Filter = "bmp рисунок (*.bmp)|*.bmp|" +
-                "Jpg рисунок (*.jpg, *.jpeg)|*.jpg; *.jpeg|" + 
+                "Jpg рисунок (*.jpg, *.jpeg)|*.jpg; *.jpeg|" +
                 "Png рисунок (*.png)|*.png";
-            MessageBox.Show("Здесь будет реализовано открытие файла");
             if (open_dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string file_name = open_dialog.FileName;
                 string path = System.IO.Path.GetFullPath(file_name);
-                MessageBox.Show("Имя файла: "+ file_name +
-                    "\nПуть файла: "+path);
-                //ImageBrush img = new ImageBrush(path);
-                /*BitmapImage myBitmapImage1 = new BitmapImage();
-                myBitmapImage1.BeginInit();
-                myBitmapImage1.UriSource = new Uri(path, UriKind.Absolute);
-                myBitmapImage1.EndInit();
-                Image1.Source = myBitmapImage1;*/
-            }
+                using (System.IO.FileStream fs = System.IO.File.OpenRead(file_name))
+                {
+                    fs.CopyTo(memoStream);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.BeginInit();
+                    bmi.StreamSource = memoStream;
+                    try
+                    {
+                        bmi.EndInit();
+                        ImageBrush brush = new ImageBrush(bmi);
+                        canvas.Background = brush;
+                        fs.Close();
+                    }
+                    catch(System.IO.FileFormatException eee)
+                    {
+                        MessageBox.Show("Неизвестный формат изображения или " +
+                                "изображение повреждено");
+                    }
+                    catch(COMException ce)
+                    {
+                        if (ce.ErrorCode == 0x88982F61)
+                        {
+                            MessageBox.Show("Неизвестный формат изображения или " +
+                                "изображение повреждено");
+                        }
+                    }
+                }
+            }   
         }
 
 
@@ -389,7 +408,7 @@ namespace graphics_editor
          */
         private void Zoom_Enlargement(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Здесь будет + zoom");
         }
 
 
@@ -398,7 +417,7 @@ namespace graphics_editor
          */
         private void Zoom_Decrease(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Здесь будет - zoom");
         }
     }
 }
